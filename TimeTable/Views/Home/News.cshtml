@@ -1,0 +1,157 @@
+﻿@model List<TimeTable.Models.NewsData>
+@{
+    ViewBag.Title = "News";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Site Metas -->
+<title>News</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Site Icons -->
+<link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+<!-- Design fonts -->
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- FontAwesome Icons core CSS -->
+<link href="~/Content/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="~/Content/css/style.css" rel="stylesheet">
+
+<!-- Responsive styles for this template -->
+<link href="~/Content/css/responsive.css" rel="stylesheet">
+
+<!-- Colors for this template -->
+<link href="~/Content/css/colors.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <div class="header-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="logo">
+                            <a href="index.html"><img src="~/Content/images/logo.png" alt=""></a>
+                        </div><!-- end logo -->
+                    </div>
+                </div><!-- end row -->
+            </div><!-- end header-logo -->
+        </div><!-- end header -->
+
+
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+
+                            <hr class="invis">
+
+                            <div class="blog-grid-system">
+                                <div class="row">
+                                @if (Model != null)
+                                {
+                                        foreach (var news in Model)
+                                        {
+                                            <div class="col-md-6">
+                                                <div class="blog-box">
+                                                    <div class="post-media">
+                                                        <a href="@news.Url" title="">
+                                                            <img src="@news.ImageUrl" alt="" class="img-fluid">
+                                                            <div class="hovereffect">
+                                                                <span></span>
+                                                            </div><!-- end hover -->
+                                                        </a>
+                                                    </div><!-- end media -->
+                                                    <div class="blog-meta big-meta">
+                                                        <h4><a href="@news.Url" title="">@news.Title</a></h4>
+                                                        <p>@news.Description</p>
+                                                        <small><a href="@news.Url" title="">Read More</a></small>
+                                                       
+                                                    </div><!-- end meta -->
+                                                </div><!-- end blog-box -->
+                                            </div><!-- end col -->
+                                        }
+                                }
+                                </div><!-- end row -->
+                            </div><!-- end blog-grid-system -->
+                        </div><!-- end page-wrapper -->
+
+                        <hr class="invis3">
+
+                      
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+
+                <hr class="invis1">
+
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="widget">
+                            <div class="footer-text text-center">
+                                <a href="index.html"><img src="~/Content/images/flogo.png" alt="" class="img-fluid"></a>
+                                <p>Cloapedia is a personal blog for handcrafted, cameramade photography content, fashion styles from independent creatives around the world.</p>
+                              
+
+                                <hr class="invis">
+
+                                <div class="newsletter-widget text-center">
+                                    <form class="form-inline">
+                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <button type="submit" class="btn btn-primary">Subscribe <i class="fa fa-envelope-open-o"></i></button>
+                                    </form>
+                                </div><!-- end newsletter -->
+                            </div><!-- end footer-text -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <div class="copyright">&copy; Cloapedia. Design: <a href="http://html.design">HTML Design</a>.</div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+
+        <div class="dmtop">Scroll to Top</div>
+
+    </div><!-- end wrapper -->
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/tether.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+
+</body>
+</html>

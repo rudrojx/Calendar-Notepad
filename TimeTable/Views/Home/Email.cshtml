@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "E-Mail";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Site Metas -->
+<title>E-mail</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Site Icons -->
+<link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+<!-- Design fonts -->
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- FontAwesome Icons core CSS -->
+<link href="~/Content/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="~/Content/css/style.css" rel="stylesheet">
+
+<!-- Responsive styles for this template -->
+<link href="~/Content/css/responsive.css" rel="stylesheet">
+
+<!-- Colors for this template -->
+<link href="~/Content/css/colors.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+
+   
+
+    <div id="wrapper">        
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">       
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @using (Html.BeginForm("SendMail", "Home", FormMethod.Post, new { enctype = "multipart/form-data" , @class="form-wrapper" }))
+                                    {
+                                        <h4>Send Mail</h4>
+                                        
+                                            <input type="email" class="form-control" placeholder="Email address" name="to">
+                                        
+                                        
+                                            <input type="text" class="form-control" placeholder="Subject" name="subject">
+                                       
+                                       
+                                            <textarea class="form-control" placeholder="Your message" name="message"></textarea>
+                                       
+                                        
+                                            <input type="file" name="attachment" />
+                                       
+                                        
+                                            <button type="submit" class="btn btn-primary">Send </button>
+                                        
+                                        if (ViewBag.Message != null)
+                                        {
+                                            <div class="alert alert-success">@ViewBag.Message</div>
+                                        }
+                                        if (ViewBag.Error != null)
+                                        {
+                                            <div class="alert alert-danger">@ViewBag.Error</div>
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                        </div><!-- end page-wrapper -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            <div class="widget">
+                                <h2 class="widget-title">Search</h2>
+                                <form class="form-inline search-form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search on the site">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </form>
+                            </div><!-- end widget -->
+
+                            <div class="widget">
+                                <h2 class="widget-title">Inbox</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="upload/blog_square_01.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
+                                                <small>12 Jan, 2016</small>
+                                            </div>
+                                        </a>                                
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->                   
+
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <footer class="footer">
+            <div class="container">               
+
+                <hr class="invis1">
+
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="widget">
+                            <div class="footer-text text-center">
+                                <a href="index.html"><img src="~/Content/images/flogo.png" alt="" class="img-fluid"></a>
+                                <p>Cloapedia is a personal blog for handcrafted, cameramade photography content, fashion styles from independent creatives around the world.</p>
+                                
+
+                                <hr class="invis">
+
+                                <div class="newsletter-widget text-center">
+                                    <form class="form-inline">
+                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <button type="submit" class="btn btn-primary">Subscribe <i class="fa fa-envelope-open-o"></i></button>
+                                    </form>
+                                </div><!-- end newsletter -->
+                            </div><!-- end footer-text -->
+                        </div><!-- end widget -->
+                    </div><!-- end col -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <br>
+                        <div class="copyright">&copy; Cloapedia. Design: <a href="http://html.design">HTML Design</a>.</div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </footer><!-- end footer -->
+
+        <div class="dmtop">Scroll to Top</div>
+
+    </div><!-- end wrapper -->
+    <!-- Core JavaScript
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+</html>
